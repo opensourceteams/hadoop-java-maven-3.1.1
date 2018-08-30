@@ -1,7 +1,7 @@
-### maven项目中logback记录日志
+### hadoop 2.6.0 本地模式源码分析(附视频)
 
-- maven项目运信，记录日志
-- 用logback记录日志 
-- 日志分别按日建文件玩意儿存储日志
-- 日志分info,debug,error级别分级别存储日志
-- 视频地址:https://www.youtube.com/watch?v=jCr7Fl-w7ac
+- hadoop 版本 2.6.0
+- map阶段源码分析: https://youtu.be/IQWs3E1Mx8k
+- reduce源码分析: https://youtu.be/iGynAp30JoQ
+- 源码: https://github.com/opensourceteams/hadoop_wordcount_2.6.0.git
+- 文档:  https://drive.google.com/open?id=1WgJUKEImNHPolzwJTlbGgayOIwZbHM47
