@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="true" scan="true" scanPeriod="10 seconds">
+	<settings>
+		<setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
+	<!-- 定义日志文件 输入位置 -->
+	<property name="log_dir" value="./logs" />
+	<!-- 日志最大的历史 30天 -->
+	<property name="maxHistory" value="30"/>
+
+
+
+
+
+	<!-- 				控制台 				-->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %mdc [%thread] %level %logger{35} - %msg%n</pattern>
+			<charset>UTF-8</charset><!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+
+	<!-- DEBUG级别日志 appender -->
+	<appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 过滤器，只记录DEBUG级别的日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/%d{yyyy-MM-dd}/debug-log.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- INFO appender -->
+	<appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 过滤器，只记录DEBUG级别的日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/%d{yyyy-MM-dd}/info-log.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- ERROR appender -->
+	<appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 过滤器，只记录DEBUG级别的日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${log_dir}/%d{yyyy-MM-dd}/error-log.log
+			</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>${maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="org.apache.ibatis" level="DEBUG">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="java.sql" level="debug">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="druid.sql" level="debug" /><!-- 如果spring-config里面没有配置slf4j,就不会显示sql日志，logback只是slf4j的一个实现 -->
+
+	<!--指定系统日志级别 INFO，DEBUG,ERROR -->
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="DEBUG" />
+		<appender-ref ref="INFO" />
+		<appender-ref ref="ERROR" />
+	</root>
+</configuration>
