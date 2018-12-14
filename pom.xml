@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.opensourceteam</groupId>
-  <artifactId>hadoop-application-wordcount</artifactId>
+  <artifactId>hadoop-java-maven-3.1.1</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -16,7 +16,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <jdk.version>1.8</jdk.version>
     <logback.version>1.2.3</logback.version>
-    <apache.hadoop.version>2.6.0</apache.hadoop.version>
+    <apache.hadoop.version>3.1.1</apache.hadoop.version>
   </properties>
 
 

@@ -60,8 +60,8 @@ public class WordCountLocalSubmitLocal {
         String inputPath = "";
         String outerPath = "";
         if(args == null || args.length < 2){
-             inputPath = "E:/temp/data/worldcount/input/a.txt";
-             outerPath = "E:/temp/data/worldcount/output_mapreduce";
+             inputPath = "/opt/data/a.txt";
+             outerPath = "/opt/temp/output/output_mr_1";
         }else{
             inputPath = args[0];
             outerPath = args[1];
@@ -89,7 +89,7 @@ public class WordCountLocalSubmitLocal {
         Configuration conf = new Configuration();
         conf.set("mapreduce.framework.name", "local");// 集群的方式运行，非本地运行  yarn,local
         conf.set("mapreduce.app-submission.cross-platform", "true");
-        conf.set("mapred.jar","E:\\n_02_大数据技术研究\\n_02_第二个阶段~系统技术学习\\bigdata\\hadoop\\n_51001_hadoop_filesystem\\target\\hadoop-application-wordcount-1.0-SNAPSHOT.jar");
+        conf.set("mapred.jar","/opt/n_001_workspaces/bigdata/hadoop-java-maven-3.1.1/target/hadoop-application-wordcount-1.0-SNAPSHOT.jar");
 
         return conf;
     }
