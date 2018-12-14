@@ -1,4 +1,7 @@
 # Hadoop 3.1.1 学习笔记
+- jdk:1.8.0_191
+- 版本: Hadoop 3.1.1
+- github:https://github.com/opensourceteams/hadoop-java-maven-3.1.1
 
 ## Hadoop 环境
 
