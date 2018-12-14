@@ -25,6 +25,11 @@ yum install pdsh
 - 官网下载地址:https://hadoop.apache.org/releases.html
 - 本文下载版本: hadoop-3.1.1.tar.gz
 - http://apache.01link.hk/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz 
+- 解压压缩包
+
+```aidl
+tar -zxvf /hadoop-3.1.1.tar.gz  -C /opt/module/bigdata
+```
 
 ## 配置
 
@@ -57,6 +62,15 @@ mkdir input
 ```
 
 ## 伪分布式模式
+
+### 配置环境变量
+- 配置在本地用户下 ~/.bashrc 
+
+```
+export HADOOP_HOME=/opt/module/bigdata/hadoop-3.1.1
+export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+
+```
 
 ### 配置core-site.xml
 - 配置文件 etc/hadoop/core-site.xml
@@ -193,13 +207,13 @@ sbin/stop-dfs.sh
 </configuration>
 
 ```
-###启动YARN
+### 启动YARN
 - 启动 ResourceManager daemon 和 NodeManager daemon
 ```
 sbin/start-yarn.sh
 ```
 
-###访问资源管理器
+### 访问资源管理器
 -  ResourceManager: http://localhost:8088/
 
 ###停止YARN
@@ -208,6 +222,19 @@ sbin/start-yarn.sh
 sbin/stop-yarn.sh
 ```
 
+
+### WorldCount官网示例运行
+- 配置环境变量直接运行 hadoop命令
+- worldcount标签，examples自带运行对应的程序
+- 输入数据源
+- 输出数据源
+
+```
+
+hadoop jar .//share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar wordcount  /opt/data/a.txt  /opt/temp/output/output_2
+
+
+```
 
 
 
