@@ -253,7 +253,7 @@ sbin/stop-yarn.sh
 
 ```
 
-hadoop jar .//share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar wordcount  /opt/data/a.txt  /opt/temp/output/output_2
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar wordcount  /opt/data/a.txt  /opt/temp/output/output_2
 
 
 ```
