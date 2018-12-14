@@ -169,12 +169,31 @@ sbin/stop-dfs.sh
 
 ### hadoop-daemon.sh命令
 ```
- hadoop-daemon.sh start namenode
- hadoop-daemon.sh start datanode
- hadoop-daemon.sh stop namenode
- hadoop-daemon.sh stop datanode
+ hdfs --daemon start namenode
+ hdfs --daemon start datanode
+ hdfs --daemon stop namenode
+ hdfs --daemon stop datanode
+
   
 ```
+
+### HDFS命令操作
+
+- 在HDFS上新建目录
+```aidl
+hdfs dfs -mkdir -p /home/liuwen/data
+```
+
+- 上传本地文件到HDFS
+```aidl
+hdfs dfs -put /opt/temp/a.txt  /home/liuwen/data
+```
+
+- 查看HDFS文件
+```aidl
+hdfs dfs -text  /home/liuwen/data/a.txt
+```
+
 
 ### YARN 配置伪分布式模式
 #### 配置文件mapred-site.xml
