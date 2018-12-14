@@ -1,5 +1,15 @@
 # Hadoop 3.1.1伪分布式模式安装
 
+## 更多资源
+github: https://github.com/opensourceteams/hadoop-java-maven-3.1.1
+
+## 视频
+- github: 
+- Hadoop 3.1.1伪分布式模式安装(bilibili视频) : https://www.bilibili.com/video/av38149957/
+- Hadoop 3.1.1伪分布式模式安装(youtube视频) : https://youtu.be/plVkuyJSNF8
+
+<iframe width="800" height="500" src="//player.bilibili.com/player.html?aid=37442139&cid=65822237&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 前置条件
 - jdk.1.8.0_191 已安装
 - linux 系统(本文选用的centos 7 系统已完装好)
