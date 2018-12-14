@@ -5,9 +5,12 @@
 - linux 系统(本文选用的centos 7 系统已完装好)
 
 ## 技能标签
-- 安装完成Hadoop3.1.1伪分布式环境
-- 可以进行Hadoop技术开发(HDFS,MapReduce)
-- 进行浏览界面管理HDFS和资源管理
+- 学会安装Hadoop3.1.1版本的伪分布式模式
+- 可以进行Hadoop技术开发(包括HDFS,MapReduce等)
+- HDFS启动停止命令，yarn启动停止命令
+- 官网自带WorldCount示例运行
+- 进行管理界面管理NamenNode管理和ResourceManager管理
+- 对Hadoop集群环境操作(一台机器也可以做集群，只是节点只有一个，很多功能都可以操作)
 
 
 ##安装步骤
@@ -44,9 +47,9 @@ tar -zxvf /hadoop-3.1.1.tar.gz  -C /opt/module/bigdata
 
 ### 执行命令 Hadoop
 - 确认hadoop命令是否可以正常执行
-
+- 查看当前版本命令
 ```
-bin/hadoop
+bin/hadoop version
 ```
 ## 独立模式
 - 本地模式
